@@ -1,0 +1,12 @@
+name: Simple Javascript Action
+description: Prints a message and the provided input
+inputs:
+  name:
+    description: The greeting name to print
+    required: true
+    default: Hello, World!
+runs:
+  # 指定了运行时环境，这里为 "node20"，说明这个 Action 是基于 NodeJS 运行的。
+  using: "node20"
+  # 这个dist/index.js是从index.js编译来的
+  main: dist/index.js

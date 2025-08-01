@@ -1,0 +1,15 @@
+name: Simple Shell Script Action
+description: Prints a message and the provided input
+inputs:
+  name:
+    description: The greeting name to print
+    required: true
+    default: Hello, World!
+runs:
+  # 指定action的运行环境是composite，表示它是一个复合的Action，里面可以组合多个现有的Action，或者
+  using: "composite"
+  steps:
+    - shell: "bash"
+      run: |
+        echo "Hello: ${{ inputs.name }}"
+        echo "This is a simple shell-based Action."
